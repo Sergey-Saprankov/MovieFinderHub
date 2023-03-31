@@ -1,10 +1,17 @@
+import path from 'path'
+
+import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import svgr from 'vite-plugin-svgr'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), svgr(), tsconfigPaths()],
   server: {
-    host: '127.0.0.1'
-  }
+    host: '127.0.0.1',
+  },
+  resolve: {
+    alias: [{ find: '@', replacement: path.resolve('src') }],
+  },
 })
