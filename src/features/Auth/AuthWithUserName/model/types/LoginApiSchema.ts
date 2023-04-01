@@ -1,4 +1,4 @@
-import { loginReducer } from '../services/login'
+import { loginApi } from '../services/login'
 
 export interface CreateSessionWithLoginRequest {
   username: string
@@ -21,4 +21,11 @@ export interface CreateSessionIdResponse {
   session_id: string
 }
 
-export type LoginSchema = ReturnType<typeof loginReducer>
+export type LoginApiSchema = ReturnType<typeof loginApi.reducer>
+
+export interface LoginSchema {
+  userName: string
+  password: string
+  errorUserName: string | null
+  errorPassword: string | null
+}

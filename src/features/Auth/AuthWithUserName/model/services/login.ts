@@ -5,18 +5,17 @@ import {
   CreateSessionIdResponse,
   CreateSessionWithLoginRequest,
   CreateSessionWithLoginResponse,
-} from '../types/LoginSchema'
-
+} from 'features/Auth/AuthWithUserName/model/types/LoginApiSchema'
 import { API_KEY } from 'shared/api/apiKey'
 import { customBaseQuery } from 'shared/api/baseUrl'
 
-const loginApi = createApi({
-  reducerPath: 'login',
+export const loginApi = createApi({
+  reducerPath: 'loginApi',
   baseQuery: customBaseQuery,
   endpoints: builder => ({
     createRequestToken: builder.query({
       query: () => ({
-        url: `authentication/token/new`,
+        url: `authentication/token/new?api_key=${API_KEY}`,
         method: 'GET',
         param: {
           api_key: API_KEY,
@@ -27,27 +26,15 @@ const loginApi = createApi({
       CreateSessionWithLoginResponse,
       CreateSessionWithLoginRequest
     >({
-      query: (arg: CreateSessionWithLoginRequest) => ({
-        url: `authentication/token/validate_with_login`,
+      query: ({ username, password, request_token }: CreateSessionWithLoginRequest) => ({
+        url: `authentication/token/validate_with_login?username=${username}&password=${password}&request_token=${request_token}&api_key=${API_KEY}`,
         method: 'POST',
-        param: {
-          api_key: API_KEY,
-        },
-        body: {
-          arg,
-        },
       }),
     }),
     createSessionId: builder.mutation<CreateSessionIdResponse, CreateSessionIdRequest>({
-      query: (arg: CreateSessionIdRequest) => ({
-        url: `authentication/token/validate_with_login`,
+      query: ({ request_token }: CreateSessionIdRequest) => ({
+        url: `authentication/session/new?request_token=${request_token}&api_key=${API_KEY}`,
         method: 'POST',
-        param: {
-          api_key: API_KEY,
-        },
-        body: {
-          ...arg,
-        },
       }),
     }),
   }),
@@ -57,7 +44,5 @@ export const {
   useAuthenticateWithLoginMutation,
   useCreateSessionIdMutation,
   useCreateRequestTokenQuery,
-  reducer: loginReducer,
   middleware: loginMiddleware,
-  endpoints,
 } = loginApi

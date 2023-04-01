@@ -2,17 +2,15 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import { StateSchema } from './StateSchema'
 
-import { userMiddleware, userReducer } from 'entities/User'
-import { loginMiddleware, loginReducer } from 'features/Auth/AuthWithUserName'
+import { loginApi, loginMiddleware, loginReducer } from 'features/Auth/AuthWithUserName'
 
 export const createStore = (initialState?: StateSchema) => {
   return configureStore({
     reducer: {
-      user: userReducer,
+      [loginApi.reducerPath]: loginApi.reducer,
       login: loginReducer,
     },
-    middleware: getDefaultMiddleware =>
-      getDefaultMiddleware().concat(loginMiddleware, userMiddleware),
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(loginMiddleware),
     devTools: true,
     preloadedState: initialState,
   })

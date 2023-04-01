@@ -1,5 +1,13 @@
+import s from './LoginPage.module.scss'
+
+import { LoginForm } from 'features/Auth/AuthWithUserName/ui/LoginForm'
+
 const LoginPage = () => {
-  return <div>login</div>
+  return (
+    <div className={s.LoginPage}>
+      <LoginForm />
+    </div>
+  )
 }
 
 export default LoginPage

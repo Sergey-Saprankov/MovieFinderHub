@@ -1,7 +1,7 @@
-import { UserSchemaByState } from 'entities/User'
-import { LoginSchema } from 'features/Auth/AuthWithUserName'
+import { LoginApiSchema } from 'features/Auth/AuthWithUserName'
+import { LoginSchema } from 'features/Auth/AuthWithUserName/model/types/LoginApiSchema'
 
 export interface StateSchema {
-  user: UserSchemaByState
+  loginApi: LoginApiSchema
   login: LoginSchema
 }

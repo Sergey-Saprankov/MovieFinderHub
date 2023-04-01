@@ -1,6 +1,6 @@
 .Input {
-  width: max-content;
   position: relative;
+  width: max-content;
 }
 
 .input {
@@ -13,5 +13,11 @@
 
   color: var(--color-input);
   background: var(--bg-input-primary);
-  border: 1px solid var(--bg-secondary);
+  border: 1px solid var(--bg-primary);
+}
+
+.absolute {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
 }
