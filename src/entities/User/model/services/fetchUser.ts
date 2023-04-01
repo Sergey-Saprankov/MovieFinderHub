@@ -15,4 +15,4 @@ export const UserApi = createApi({
   }),
 })
 
-export const { useGetUserDataQuery, reducer: userReducer } = UserApi
+export const { useGetUserDataQuery, reducer: userReducer, middleware: userMiddleware } = UserApi

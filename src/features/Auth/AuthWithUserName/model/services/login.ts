@@ -14,7 +14,7 @@ const loginApi = createApi({
   reducerPath: 'login',
   baseQuery: customBaseQuery,
   endpoints: builder => ({
-    createRequestToken: builder.mutation({
+    createRequestToken: builder.query({
       query: () => ({
         url: `authentication/token/new`,
         method: 'GET',
@@ -56,6 +56,8 @@ const loginApi = createApi({
 export const {
   useAuthenticateWithLoginMutation,
   useCreateSessionIdMutation,
-  useCreateRequestTokenMutation,
+  useCreateRequestTokenQuery,
   reducer: loginReducer,
+  middleware: loginMiddleware,
+  endpoints,
 } = loginApi

@@ -12,7 +12,7 @@ interface StoreProviderProps {
 }
 
 export const StoreProvider: FC<StoreProviderProps> = ({ children, initialState }) => {
-  const store = createStore(initialState)
+  const store = createStore(initialState as StateSchema)
 
   return <Provider store={store}>{children}</Provider>
 }
