@@ -1,0 +1,85 @@
+.Sidebar {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: var(--sidebar-width-open);
+  height: 100vh;
+  padding: 5px 0 70px 0;
+
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border-color-app);
+
+  transition: width ease-in-out 0.3s;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.closing {
+  width: var(--sidebar-width-close);
+}
+
+.btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.text {
+  font: var(--font-s);
+  color: var(--seconry-color);
+
+  transition: font-size 0.3s ease-in-out;
+}
+
+.display {
+  font-size: 0;
+  .footer {
+    align-items: center;
+  }
+}
+
+.arrowContainer {
+  position: absolute;
+  top: 50%;
+  right: -11px;
+  transform: translate(-50% -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+}
+
+.btnArrow {
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.test {
+  fill: red;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.userBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}

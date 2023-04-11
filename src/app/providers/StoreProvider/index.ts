@@ -1,1 +1,1 @@
-export {}
+export { StoreProvider } from './ui/StoreProvider'

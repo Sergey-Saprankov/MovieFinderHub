@@ -2,31 +2,33 @@
   --font-family-main: 'Poppins', sans-serif;
 
   --font-size-m: 14px;
-  --line-height-m: 20px;
+  --line-height-m: 15px;
   --font-m: var(--font-size-m) / var(--line-height-m) var(--font-family-main);
 
   --font-size-l: 18px;
   --line-height-l: 24px;
   --font-l: var(--font-size-l) / var(--line-height-l) var(--font-family-main);
 
-  --font-size-xl: 22px;
-  --line-height-xl: 28px;
+  --font-size-xl: 24px;
+  --line-height-xl: 30px;
   --font-xl: var(--font-size-xl) / var(--line-height-xl) var(--font-family-main);
 
-  --btn-high-width: 300px;
-  --btn-high-height: 40px;
+  --font-size-err: 12px;
+  --line-height-err: 15px;
+  --font-err: var(--font-size-err) / var(--line-height-err) var(--font-family-main);
 
+  --sidebar-width-open: 300px;
+  --sidebar-width-close: 90px;
 
-  --bg-primary: #121212;
-  --bg-secondary: #fff;
+  --navbar-height: 80px;
 
-  --color-primary: #fff;
-  --color-secondary: #121212;
-  --color-error: #e65840;
+  --border-radius-app: 15px;
 
-  --bg-input-primary: #fff;
-  --color-input: #121212;
+  --btn-size-width-small: 255px;
+  --btn-size-height-small: 40px;
 
-  --btn-bg-primary: #5252ea;
-  --btn-color-primary: #fff;
+  --btn-size-width-large: 255px;
+  --btn-size-height-large: 48px;
+
+  --color-error: #ea5555;
 }
